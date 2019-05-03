@@ -7,16 +7,7 @@ const app = express();
 // serve files from the public directory
 app.use(express.static('public'));
 
-//const server = http.createServer((req, res) => {
-//res.statusCode = 200;
-//res.setHeader('Content-Type', 'text/html');
-//res.end(stringObj);
-//});
-//server.listen(port,() => {
-//console.log(`Server running at port `+port);
-//});
-
-// start the express web server listening on 8080 // change to port for example
+// start the express web server listening on 8080 // change to port for heroku
 app.listen(port, () => {
   console.log('listening on 8080');
 });
