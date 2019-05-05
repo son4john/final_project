@@ -1,2 +1,22 @@
-second query
-results
+2. Count of employees in each department
+ 
+db.department_employees.aggregate(
+ [
+     {
+      $group : {
+         _id : {dept_no: "$dept_no" },
+         count: {$sum: 1}
+               }
+    }
+ ]
+ )
+
+{ "_id" : { "dept_no" : "d002" }, "count" : 17346 }
+{ "_id" : { "dept_no" : "d001" }, "count" : 20211 }
+{ "_id" : { "dept_no" : "d003" }, "count" : 17786 }
+{ "_id" : { "dept_no" : "d009" }, "count" : 23580 }
+{ "_id" : { "dept_no" : "d008" }, "count" : 21126 }
+{ "_id" : { "dept_no" : "d006" }, "count" : 20117 }
+{ "_id" : { "dept_no" : "d007" }, "count" : 52245 }
+{ "_id" : { "dept_no" : "d004" }, "count" : 73485 }
+{ "_id" : { "dept_no" : "d005" }, "count" : 85707 }
