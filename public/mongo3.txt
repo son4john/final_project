@@ -1,2 +1,30 @@
-third query results
-adsd
+3. Manager Breakdown
+
+> db.department_manager.aggregate([
+...    {
+...       $lookup:{
+...          from:"department_employees",
+...          localField:"emp_no",
+...          foreignField:"emp_no",
+...          as:"tmp1"
+...       }
+...    },
+...    {
+...       $unwind:"$tmp1"
+...    },
+... {
+... $group:
+... {
+... _id:{dept:"$dept_no",gender:"$gender"}, Count:{$sum:1}
+... }
+... }
+... ]);
+{ "_id" : { "dept" : "d003" }, "Count" : 2 }
+{ "_id" : { "dept" : "d002" }, "Count" : 2 }
+{ "_id" : { "dept" : "d008" }, "Count" : 2 }
+{ "_id" : { "dept" : "d007" }, "Count" : 2 }
+{ "_id" : { "dept" : "d009" }, "Count" : 4 }
+{ "_id" : { "dept" : "d005" }, "Count" : 2 }
+{ "_id" : { "dept" : "d001" }, "Count" : 2 }
+{ "_id" : { "dept" : "d006" }, "Count" : 4 }
+{ "_id" : { "dept" : "d004" }, "Count" : 4 }
