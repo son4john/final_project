@@ -1,2 +1,5 @@
-mongo 1 test file
-mongo second line
+1. Who is the oldest employee, male and female?
+> db.employees.find({"gender": "M"}).sort( { birth_date: 1} ).limit(1)
+{ "_id" : ObjectId("5c8d3f658f1495d75380d71b"), "emp_no" : 65308, "birth_date" : "1952-02-01", "first_name" : "Jouni", "last_name" : "Pocchiola", "gender" : "M", "hire_date" : "1985-03-10" }
+> db.employees.find({"gender": "F"}).sort( { birth_date: 1} ).limit(1)
+{ "_id" : ObjectId("5c8d3f658f1495d753804af2"), "emp_no" : 29456, "birth_date" : "1952-02-02", "first_name" : "Barun", "last_name" : "Krohm", "gender" : "F", "hire_date" : "1992-11-23" }
