@@ -1,11 +1,19 @@
-5. db.empTitles.aggregate(
-   [
-     {
-       $group:
-         {
-           _id: "$title",
-		   datediff: {avg:{{$divide:[$subtract:[{$toDate:"$to_date"}, {$toDate:"$from_date"}] , 86400000}}}
-           }
-     }
-   ]
-)
+> db.titles.aggregate(
+...    [
+...      {
+...        $group:
+...          {
+...            _id: "$title",
+...            avgPeriod:{$avg:{$subtract:[{$toDate:"$to_date"}, {$toDate:"$from_date"}]}}
+...
+...            }
+...      }
+...    ]
+... )
+{ "_id" : "Manager", "avgPeriod" : 94836517200000 }
+{ "_id" : "Technique Leader", "avgPeriod" : 200954297758955.06 }
+{ "_id" : "Staff", "avgPeriod" : 60163190096957.84 }
+{ "_id" : "Senior Staff", "avgPeriod" : 223110252072346.62 }
+{ "_id" : "Senior Engineer", "avgPeriod" : 222050320848073.66 }
+{ "_id" : "Assistant Engineer", "avgPeriod" : 60032219932099.42 }
+{ "_id" : "Engineer", "avgPeriod" : 68162333175725.85 }
