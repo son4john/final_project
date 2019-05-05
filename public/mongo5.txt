@@ -1,4 +1,11 @@
-fifth query
-results
-add
-sd
+5. db.empTitles.aggregate(
+   [
+     {
+       $group:
+         {
+           _id: "$title",
+		   datediff: {avg:{{$divide:[$subtract:[{$toDate:"$to_date"}, {$toDate:"$from_date"}] , 86400000}}}
+           }
+     }
+   ]
+)
