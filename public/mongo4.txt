@@ -1,2 +1,21 @@
-forth query
-results
+4. Max salary
+
+> db.department_employees.aggregate([
+...    {
+...       $lookup:{
+...          from:"salaries",
+...          localField:"emp_no",
+...          foreignField:"emp_no",
+...          as:"tmp1"
+...       }
+...    },
+...    {
+...       $unwind:"$tmp1"
+...    },
+... {
+... $group:
+... {
+... _id:"$gender", MaxSal:{$max:"$salary" }
+... }
+... }
+... ]);
