@@ -1,8 +1,12 @@
-# final_project
-//information dump
-Using nodemon for realtime updates while i was editing it
-mongo queries are run and then results stored into text file
-grabbing queries from the text file and print to html
-we tried using mongo but still had connectivity issues
-express worked well for the website protion but honestly i don't think i needed it
-server file and a public folder with a client side javascripts and then html page
+#FINAL PROJECT - MONGO QUERY SELECTION
+#MIS 6383.501 - Programming Approaches to Data Management
+
+- Deployed in Heroku
+- Using: Express, Mongo(not implemented)
+
+- This project displays mongo queries. These queries are run, and the results copied into text files. The
+program then selects the text file, based on the users button selection.
+
+- nodemon was used during development for realtime testing
+- attempts to connect to mongo directly failed, i might see if i can use Atlas later on to overcome issue
+    - i think the problem is i couldn't figure out how to keep the mongo server running while it is deployed in heroku
