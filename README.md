@@ -14,5 +14,6 @@ program then selects the text file, based on the users button selection.
 
 - server.js - is my server side script, it manages the html file. It was also suppose to manage the mongo request, but unfortunatley i couldn't get that to work properly.
 
-- client.js - javascripts
-- 
+- client.js - client side scripts
+- index.html - webpage
+- mongo#.txt - mongo queries
