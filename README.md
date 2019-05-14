@@ -1,6 +1,6 @@
 # final_project
 //information dump
-Using nodemon to run queries
+Using nodemon for realtime updates while i was editing it
 mongo queries are run and then results stored into text file
 grabbing queries from the text file and print to html
 we tried using mongo but still had connectivity issues
