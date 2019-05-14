@@ -11,3 +11,8 @@ program then selects the text file, based on the users button selection.
 - nodemon was used during development for realtime testing
 - attempts to connect to mongo directly failed, i might see if i can use Atlas later on to overcome issue
     - i think the problem is i couldn't figure out how to keep the mongo server running while it is deployed in heroku
+
+- server.js - is my server side script, it manages the html file. It was also suppose to manage the mongo request, but unfortunatley i couldn't get that to work properly.
+
+- client.js - javascripts
+- 
